@@ -1,0 +1,35 @@
+{
+    "name": "react-format-currency",
+    "version": "0.1",
+    "description": "React component to format currency in an input or as a text field",
+    "main": "src/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/apoca/react-format-currency.git"
+    },
+    "author": "Miguel Vieira",
+    "license": "MIT",
+    "bugs": {
+        "mail": "vieira@miguelvieira.com.pt",
+        "url": "https://github.com/apoca/react-format-currency/issues"
+    },
+    "keywords": [
+        "react-component",
+        "react",
+        "currency",
+        "input",
+        "number",
+        "number-format",
+        "mask"
+    ],
+    "homepage": "https://github.com/apoca/react-format-currency#readme",
+    "scripts": {
+        "start": "webpack-dev-server --content-base example/ --config webpack.dev.config.js --watch-poll --progress --inline --hot"
+    },
+    "devDependencies": {},
+    "peerDependencies": {
+        "react": "^15.0.0-rc || ^15.0.0 || ^16.0.0-rc || ^16.0.0",
+        "react-dom": "^15.0.0-rc || ^15.0.0 || ^16.0.0-rc || ^16.0.0"
+    },
+    "dependencies": {}
+}

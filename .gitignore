@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+npm-debug.log
+.idea/
+.DS_Store
+
+# Coverage files
+.nyc_output
+coverage

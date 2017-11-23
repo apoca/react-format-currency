@@ -1,6 +1,6 @@
 {
     "name": "react-format-currency",
-    "version": "0.1",
+    "version": "1.0.0",
     "description": "React component to format currency in an input or as a text field",
     "main": "src/index.js",
     "repository": {
@@ -24,12 +24,42 @@
     ],
     "homepage": "https://github.com/apoca/react-format-currency#readme",
     "scripts": {
-        "start": "webpack-dev-server --content-base example/ --config webpack.dev.config.js --watch-poll --progress --inline --hot"
+        "start": "webpack-dev-server --content-base example/ --config webpack.config.js --watch-poll --progress --inline --hot",
+        "dashboard": "webpack-dashboard -t 'Format Currency' -- webpack-dev-server"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-eslint": "^8.0.2",
+        "babel-loader": "^7.1.2",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-1": "^6.24.1",
+        "config-webpack-plugin": "^1.1.0",
+        "css-loader": "^0.28.7",
+        "eslint": "^4.11.0",
+        "eslint-config-airbnb": "^16.1.0",
+        "eslint-loader": "^1.9.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-jsx-a11y": "^6.0.2",
+        "eslint-plugin-prettier": "^2.3.1",
+        "eslint-plugin-react": "^7.5.1",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "file-loader": "^1.1.5",
+        "html-webpack-plugin": "^2.30.1",
+        "prettier-eslint": "^8.2.2",
+        "style-loader": "^0.19.0",
+        "url-loader": "^0.6.2",
+        "webpack": "^3.8.1",
+        "webpack-dashboard": "^1.0.2",
+        "webpack-dev-server": "^2.9.4"
+    },
     "peerDependencies": {
         "react": "^15.0.0-rc || ^15.0.0 || ^16.0.0-rc || ^16.0.0",
         "react-dom": "^15.0.0-rc || ^15.0.0 || ^16.0.0-rc || ^16.0.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "prop-types": "^15.6.0",
+        "react": "^15.*",
+        "react-dom": "^15.*"
+    }
 }

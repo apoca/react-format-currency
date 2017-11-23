@@ -3,14 +3,12 @@ const path = require('path');
 
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ConfigPlugin = require('config-webpack-plugin');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isProduction = nodeEnv === 'production';
 
 const buildPath = path.join(__dirname, 'build');
 const imgPath = path.join(__dirname, 'src/assets');
-const examplePath = path.join(__dirname, 'example');
 const sourcePath = path.join(__dirname, 'src');
 
 // Common plugins
@@ -20,99 +18,89 @@ const plugins = [
       NODE_ENV: JSON.stringify(nodeEnv),
     },
   }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    filename: 'vendor-[hash].js',
-    minChunks(module) {
-      const context = module.context;
-      return context && context.indexOf('node_modules') >= 0;
-    },
-  }),
+  new webpack
+    .optimize
+    .CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor-[hash].js',
+      minChunks(module) {
+        return module.context && module.context.indexOf('node_modules') >= 0;
+      },
+    }),
   new webpack.NamedModulesPlugin(),
   new HtmlWebpackPlugin({
-    template: path.join(publicPath, 'index.html'),
+    template: path.join(__dirname, 'example/index.html'),
     path: buildPath,
     filename: 'index.html',
   }),
-  new ConfigPlugin(['./config.js', './config.local.js']),
 ];
 
 // Common rules
 const rules = [
   {
-    test: /\.jsx?$/,
+    test: /\.(js|jsx)$/,
     enforce: 'pre',
     loader: 'eslint-loader',
     options: {
       emitWarning: true,
     },
-  },
-  {
+  }, {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
       options: {
-        presets: ["react", "es2015", "stage-0"],
-        "plugins": ["react-hot-loader/babel"]
-      }
-    }
-  },
-  {
+        presets: ['react', 'es2015', 'stage-1'],
+      },
+    },
+  }, {
     test: /\.css$/,
-    use: ['style-loader', 'css-loader']
-  },
-  {
+    use: ['style-loader', 'css-loader'],
+  }, {
     test: /\.(png|gif|jpg|svg)$/,
     include: imgPath,
     use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
-  },
-  {
+  }, {
     test: /\.(woff|woff2|eot|ttf|svg)$/,
     use: {
       loader: 'url-loader',
       options: {
-        limit: 100000
-      }
-    }
+        limit: 100000,
+      },
+    },
   },
 ];
 
 if (isProduction) {
   // Production plugins
-  plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true,
-      },
-      output: {
-        comments: false,
-      },
-    })
-  );
+  plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false,
+      screw_ie8: true,
+      conditionals: true,
+      unused: true,
+      comparisons: true,
+      sequences: true,
+      dead_code: true,
+      evaluate: true,
+      if_return: true,
+      join_vars: true,
+    },
+    output: {
+      comments: false,
+    },
+  }));
 } else {
   // Development plugins
-  plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new DashboardPlugin()
-  );
+  plugins.push(new DashboardPlugin());
 }
 
 module.exports = {
-  devtool: isProduction ? false : 'source-map',
-  entry: [
-    // entry point
-    './src/index.jsx'
-  ],
+  devtool: isProduction
+    ? false
+    : 'source-map',
+  entry: [// entry point
+    './example/src/index.js'],
   output: {
     path: buildPath,
     publicPath: '/',
@@ -130,13 +118,14 @@ module.exports = {
   },
   plugins,
   devServer: {
-    contentBase: isProduction ? buildPath : sourcePath,
+    contentBase: isProduction
+      ? buildPath
+      : sourcePath,
     historyApiFallback: true,
     port: 3000,
     compress: isProduction,
     inline: !isProduction,
-    hot: !isProduction,
-    host: '0.0.0.0',
+    host: 'localhost',
     disableHostCheck: true,
     stats: {
       assets: true,

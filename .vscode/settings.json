@@ -1,0 +1,4 @@
+{
+    "eslint.autoFixOnSave": true,
+    "eslint.options": { "configFile": "/Applications/MAMP/htdocs/react-format-currency/.eslintrc.js" }
+}

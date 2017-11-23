@@ -102,7 +102,7 @@ module.exports = {
     ? false
     : 'source-map',
   entry: [// entry point
-    './example/src/index.js'],
+    './src/index.js'],
   output: {
     path: buildPath,
     publicPath: '/',

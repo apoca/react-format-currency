@@ -24,7 +24,9 @@ const plugins = [
       name: 'vendor',
       filename: 'vendor-[hash].js',
       minChunks(module) {
-        return module.context && module.context.indexOf('node_modules') >= 0;
+        return module.context && module
+          .context
+          .indexOf('node_modules') >= 0;
       },
     }),
   new webpack.NamedModulesPlugin(),
@@ -38,11 +40,11 @@ const plugins = [
 // Common rules
 const rules = [
   {
-    test: /\.(js|jsx)$/,
+    test: /\.(jsx)$/,
     enforce: 'pre',
     loader: 'eslint-loader',
     options: {
-      emitWarning: true,
+      emitWarning: !isProduction,
     },
   }, {
     test: /\.(js|jsx)$/,
@@ -100,7 +102,7 @@ module.exports = {
     ? false
     : 'source-map',
   entry: [// entry point
-    './example/src/index.js'],
+    './example/src/index.jsx'],
   output: {
     path: buildPath,
     publicPath: '/',
@@ -110,7 +112,9 @@ module.exports = {
     rules,
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [
+      '.js', '.jsx',
+    ],
     modules: [
       path.resolve(__dirname, 'node_modules'),
       sourcePath,

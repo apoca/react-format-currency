@@ -2,7 +2,7 @@
     "name": "react-format-currency",
     "version": "1.0.0",
     "description": "React component to format currency in an input or as a text field",
-    "main": "src/index.js",
+    "main": "src/FormatCurrency.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/apoca/react-format-currency.git"

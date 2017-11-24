@@ -1,3 +1,5 @@
+
+[![npm version](http://img.shields.io/npm/v/react-format-currency.svg)](https://npmjs.org/package/react-format-currency)
 [![Build Status](https://travis-ci.org/apoca/react-format-currency.svg?branch=master)](https://travis-ci.org/apoca/react-format-currency)
 [![npm](https://img.shields.io/npm/dm/react-format-currency.svg)](https://www.npmjs.com/package/react-format-currency)
 

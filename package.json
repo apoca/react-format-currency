@@ -31,8 +31,7 @@
         "start": "webpack --watch",
         "build": "webpack",
         "test:lint": "eslint ./src --ext .jsx --ext .js",
-        "test:ci": "npm run test:lint && npm run build && npm run test",
-        "precommit": "lint-staged"
+        "test:ci": "npm run test:lint && npm run build && npm run test"
     },
     "prepush": {
         "run": [
@@ -40,12 +39,6 @@
             "test:lint"
         ],
         "silent": true
-    },
-    "lint-staged": {
-        "*.{js,jsx}": [
-            "eslint ./src ./test --fix --max-warnings 0 --no-ignore",
-            "git add"
-        ]
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",

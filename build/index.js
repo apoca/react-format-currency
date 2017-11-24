@@ -1,5 +1,14 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("react"));
+	else if(typeof define === 'function' && define.amd)
+		define(["react"], factory);
+	else if(typeof exports === 'object')
+		exports["react-format-currency"] = factory(require("react"));
+	else
+		root["react-format-currency"] = factory(root["React"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -107,7 +116,7 @@ var FormatCurrency = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'teste maria antonia 2'
+        'teste maria antonia 4'
       );
     }
   }]);
@@ -121,7 +130,8 @@ exports.default = FormatCurrency;
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = require("react");
+module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 /***/ })
 /******/ ]);
+});

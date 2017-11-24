@@ -1,9 +1,24 @@
-node_modules
-dist
-npm-debug.log
-.idea/
-.DS_Store
+# Generated folders and files
+**/.log
+**/.sass-cache
+**/.tmp
+**/bower_components
+**/complexity
+**/coverage
+**/design.doc.json
+**/dist
+**/node_modules
+**/npm-debug.log
+**/packages
+**/quality
+**/reports
 
-# Coverage files
-.nyc_output
-coverage
+# Git
+**/*.orig
+
+# IntelliJ IDEA / WebStorm
+**/*.iml
+**/*.idea
+
+# MacOS
+**/.DS_Store

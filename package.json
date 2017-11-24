@@ -30,9 +30,16 @@
         "test": "echo \"Error: no test specified\"",
         "start": "webpack --watch",
         "build": "webpack",
-        "lint": "eslint ./src ./test",
+        "test:lint": "eslint ./src --ext .jsx --ext .js",
         "test:ci": "npm run lint && npm run build && npm run test",
         "precommit": "lint-staged"
+    },
+    "prepush": {
+        "run": [
+            "test",
+            "test:lint"
+        ],
+        "silent": true
     },
     "lint-staged": {
         "*.{js,jsx}": [

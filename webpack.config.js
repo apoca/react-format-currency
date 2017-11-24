@@ -1,11 +1,19 @@
 const path = require('path');
 
+var reactExternal = {
+  root: 'React',
+  commonjs2: 'react',
+  commonjs: 'react',
+  amd: 'react'
+};
+
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
-    libraryTarget: 'commonjs2',
+    library: 'react-format-currency',
+    libraryTarget: 'umd',
   },
   module: {
     rules: [
@@ -16,13 +24,16 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ["react", "es2015", "stage-0"],
+            presets: ["env"],
           },
         },
       },
     ],
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   externals: {
-    react: 'commonjs react',
+    react: reactExternal,
   },
 };

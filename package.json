@@ -29,7 +29,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "webpack --watch",
-        "build": "webpack"
+        "build": "webpack",
+        "lint": "eslint . --ext js,jsx"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
@@ -37,6 +38,7 @@
         "babel-eslint": "^8.0.2",
         "babel-loader": "^7.1.2",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
         "babel-preset-env": "^1.6.1",
         "eslint": "^4.11.0",
         "eslint-config-airbnb": "^16.1.0",

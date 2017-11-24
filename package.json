@@ -30,8 +30,15 @@
         "test": "echo \"Error: no test specified\"",
         "start": "webpack --watch",
         "build": "webpack",
-        "lint": "eslint ./src --ext js,jsx",
-        "test:ci": "npm run lint && npm run build && npm run test"
+        "lint": "eslint ./src ./test",
+        "test:ci": "npm run lint && npm run build && npm run test",
+        "precommit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{js,jsx}": [
+            "eslint ./src ./test --fix --max-warnings 0 --no-ignore",
+            "git add"
+        ]
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",

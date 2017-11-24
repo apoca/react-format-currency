@@ -107,7 +107,7 @@ var FormatCurrency = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'teste maria antonia'
+        'teste maria antonia 2'
       );
     }
   }]);

@@ -9,7 +9,7 @@ class FormatCurrency extends Component {
   render() {
     return (
       <div>
-        teste maria antonia 4
+        teste maria antonia qwdwqdqwd
       </div>
     );
   }

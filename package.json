@@ -27,10 +27,11 @@
     ],
     "homepage": "https://github.com/apoca/react-format-currency#readme",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "echo \"Error: no test specified\"",
         "start": "webpack --watch",
         "build": "webpack",
-        "lint": "eslint . --ext js,jsx"
+        "lint": "eslint ./src --ext js,jsx",
+        "test:ci": "npm run lint && npm run build && npm run test"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",

@@ -15,8 +15,7 @@ React Intl
 ### Features
 
 - Display numbers (on Input) with separators.
-- Pluralize labels in strings.
-- Support for 150+ languages.
+- Support for 150+ countries.
 - Runs in the browser and Node.js.
 - Built on standards.
 
@@ -68,10 +67,10 @@ export default App;
 ### Props
 | Props        | Options           | Default  | Description |
 | ------------- |-------------| -----| -------- |
-| currency | Ex: USD, EUR, GBP, BRL etc... | required | International Organization for Standardization publishes a list of standard currency codes referred	to as the ISO 4217 code list |
+| currency | Ex: USD, EUR, GBP, BRL etc... | required | International Organization for Standardization publishes a list of standard currency codes referred	to as the ISO 4217 code list. |
 | placeholder | Ex: 0.00, €150.00, US$150,00 etc ...| optional | The placeholder attribute specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format). |
 | value | Ex. 1000 | optional | Value to the number format. It can be a float number, or formatted string. |
-| onChange | Ex: (values) => {} | none | onChange handler to get values object for usage in your component |
+| onChange | Ex: (values) => {} | none | onChange handler to get values object for usage in your component. |
 
 #### values object
 values object is on following format

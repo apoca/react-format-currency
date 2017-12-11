@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { injectIntl } from 'react-intl';
+import PropTypes from 'prop-types';
+import { injectIntl, intlShape } from 'react-intl';
 import { removeAllButLast } from './utils';
 
 class FormatCurrency extends Component {
@@ -43,7 +44,7 @@ class FormatCurrency extends Component {
     e.persist();
     const el = e.target;
     const inputValue = el.value;
-    const regex = /^[0-9]+(\.|\,){1}[0-9]+$/;
+    const regex = /^[0-9]+(\.,){1}[0-9]+$/;
 
     if (!regex.test(inputValue)) {
       el.value = removeAllButLast(inputValue.replace(/[^\d,.]/g, '').replace(',', '.'), '.');
@@ -105,5 +106,16 @@ class FormatCurrency extends Component {
     );
   }
 }
+
+FormatCurrency.propTypes = {
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  currency: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  intl: intlShape,
+};
 
 export default injectIntl(FormatCurrency);

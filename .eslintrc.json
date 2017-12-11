@@ -15,6 +15,7 @@
         "max-len": ["error", 120, 2],
         // disallow adding to native types
         "no-extend-native": 1,
-        "no-debugger": "warn"
+        "no-debugger": "warn",
+        "react/require-default-props": [0, { "forbidDefaultForRequired": false }]
     }
 }

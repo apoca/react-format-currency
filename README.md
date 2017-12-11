@@ -10,7 +10,7 @@ React Intl
 
 | react-format-currency | react |
 | --- | --- |
-| 0.0.x | ^15.0.0-rc || ^15.0.0 || ^16.0.0-rc || ^16.2.0 |
+| 0.0.x | ^15.0.0-rc, ^15.0.0, ^16.0.0-rc, ^16.2.0 |
 
 ### Features
 
@@ -22,7 +22,7 @@ React Intl
 
 ## About component
 
-This component has as main function, show the value of the currency already formatted within the input, thus making the understanding easier for the user. he component then uses the values of those props to properly format the passed values. Below is a listing of each component, its props and a usage example. This component uses as base another component [React-intl] (https://github.com/yahoo/react-intl) that provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations.
+This component has as main function, show the value of the currency already formatted within the input, thus making the understanding easier for the user. he component then uses the values of those props to properly format the passed values. Below is a listing of each component, its props and a usage example. This component uses as base another component [React-intl](https://github.com/yahoo/react-intl/) that provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations.
 
 ## Usage / Instalation
 

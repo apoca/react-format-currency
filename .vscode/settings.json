@@ -1,4 +1,5 @@
 {
     "eslint.autoFixOnSave": true,
-    "eslint.options": { "configFile": "/Applications/MAMP/htdocs/react-format-currency/.eslintrc.js" }
+    "eslint.options": { "configFile": "/Applications/MAMP/htdocs/react-format-currency/.eslintrc.json" },
+    "eslint.validate": ["javascript", "javascriptreact", { "language": "html", "autoFix": true }]
 }

@@ -12,6 +12,9 @@
         "jsx-a11y/no-static-element-interactions": 0,
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "class-methods-use-this": 0,
-        "max-len": ["error", 120, 2]
+        "max-len": ["error", 120, 2],
+        // disallow adding to native types
+        "no-extend-native": 1,
+        "no-debugger": "warn"
     }
 }

@@ -1,10 +1,10 @@
 const path = require('path');
 
-var reactExternal = {
+const reactExternal = {
   root: 'React',
   commonjs2: 'react',
   commonjs: 'react',
-  amd: 'react'
+  amd: 'react',
 };
 
 module.exports = {
@@ -24,14 +24,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ["env"],
+            presets: ['env'],
           },
         },
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
   externals: {
     react: reactExternal,

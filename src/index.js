@@ -79,7 +79,7 @@ class FormatCurrency extends Component {
 
   render() {
     const { value, formattedValue } = this.state;
-    const { placeholder } = this.props;
+    const { placeholder, className } = this.props;
 
     const inputProps = Object.assign(
       {},
@@ -89,6 +89,7 @@ class FormatCurrency extends Component {
         onFocus: this.onFocus,
         onBlur: this.onBlur,
         onKeyDown: this.onKeyDown,
+        className,
       },
     );
 
@@ -101,7 +102,7 @@ class FormatCurrency extends Component {
     }
     return (
       <div>
-        <input value="" placeholder={placeholder} onChange={this.onChange} />
+        <input value="" placeholder={placeholder} className={className} onChange={this.onChange} />
       </div>
     );
   }
@@ -114,6 +115,7 @@ FormatCurrency.propTypes = {
   ]),
   currency: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
+  className: PropTypes.string,
   onChange: PropTypes.func,
   intl: intlShape,
 };

@@ -89,7 +89,7 @@ class FormatCurrency extends Component {
         onFocus: this.onFocus,
         onBlur: this.onBlur,
         onKeyDown: this.onKeyDown,
-        className
+        className,
       },
     );
 
@@ -115,6 +115,7 @@ FormatCurrency.propTypes = {
   ]),
   currency: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
+  className: PropTypes.string,
   onChange: PropTypes.func,
   intl: intlShape,
 };

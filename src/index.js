@@ -64,7 +64,7 @@ class FormatCurrency extends Component {
     });
 
     this.setState({
-      value: Number(value).toFixed(2),
+      value: value ? Number(value).toFixed(2) : '',
       formattedValue: el.value,
     }, () => {
       const valueObj = {

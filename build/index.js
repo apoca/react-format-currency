@@ -685,29 +685,24 @@ var FormatCurrency = function (_Component) {
           formattedValue = _state2.formattedValue;
       var _props = this.props,
           placeholder = _props.placeholder,
-          className = _props.className;
+          className = _props.className,
+          disabled = _props.disabled;
 
 
       var inputProps = Object.assign({}, {
-        value: formattedValue,
+        value: value ? formattedValue : '',
         onChange: this.onChange,
         onFocus: this.onFocus,
         onBlur: this.onBlur,
         onKeyDown: this.onKeyDown,
+        disabled: disabled,
         className: className
       });
 
-      if (value) {
-        return _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement('input', inputProps)
-        );
-      }
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('input', { value: '', placeholder: placeholder, className: className, onChange: this.onChange })
+        _react2.default.createElement('input', inputProps)
       );
     }
   }]);
@@ -719,6 +714,8 @@ FormatCurrency.propTypes = {
   value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
   currency: _propTypes2.default.string.isRequired,
   placeholder: _propTypes2.default.string,
+  disabled: _propTypes2.default.bool,
+  className: _propTypes2.default.string,
   onChange: _propTypes2.default.func,
   intl: _reactIntl.intlShape
 };

@@ -84,7 +84,7 @@ class FormatCurrency extends Component {
     const inputProps = Object.assign(
       {},
       {
-        value: formattedValue,
+        value: value ? formattedValue : '',
         onChange: this.onChange,
         onFocus: this.onFocus,
         onBlur: this.onBlur,
@@ -94,16 +94,9 @@ class FormatCurrency extends Component {
       },
     );
 
-    if (value) {
-      return (
-        <div>
-          <input {...inputProps} />
-        </div>
-      );
-    }
     return (
       <div>
-        <input value="" placeholder={placeholder} className={className} disabled={disabled} onChange={this.onChange} />
+        <input {...inputProps} />
       </div>
     );
   }

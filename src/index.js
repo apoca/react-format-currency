@@ -64,7 +64,7 @@ class FormatCurrency extends Component {
     });
 
     this.setState({
-      value: Number(value).toFixed(2),
+      value: value ? Number(value).toFixed(2) : '',
       formattedValue: el.value,
     }, () => {
       const valueObj = {
@@ -84,26 +84,20 @@ class FormatCurrency extends Component {
     const inputProps = Object.assign(
       {},
       {
-        value: formattedValue,
+        value: value ? formattedValue : '',
         onChange: this.onChange,
         onFocus: this.onFocus,
         onBlur: this.onBlur,
         onKeyDown: this.onKeyDown,
+        placeholder,
         disabled,
         className,
       },
     );
 
-    if (value) {
-      return (
-        <div>
-          <input {...inputProps} />
-        </div>
-      );
-    }
     return (
       <div>
-        <input value="" placeholder={placeholder} className={className} disabled={disabled} onChange={this.onChange} />
+        <input {...inputProps} />
       </div>
     );
   }

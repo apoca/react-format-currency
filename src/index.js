@@ -89,6 +89,7 @@ class FormatCurrency extends Component {
         onFocus: this.onFocus,
         onBlur: this.onBlur,
         onKeyDown: this.onKeyDown,
+        placeholder,
         disabled,
         className,
       },

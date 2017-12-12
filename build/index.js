@@ -665,7 +665,7 @@ var FormatCurrency = function (_Component) {
       });
 
       this.setState({
-        value: Number(value).toFixed(2),
+        value: value ? Number(value).toFixed(2) : '',
         formattedValue: el.value
       }, function () {
         var valueObj = {

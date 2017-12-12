@@ -28,7 +28,7 @@ This component has as main function, show the value of the currency already form
 
 1. `npm install react-format-currency --save`
 2. In your application add support to react-intl:
-```js 
+```js
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
@@ -51,11 +51,11 @@ import React, { Component } from 'react';
 import FormatCurrency from 'react-format-currency';
 
 class App extends Component {
-  
+
   render() {
     return (
       <div className="App">
-      <FormatCurrency currency="EUR" placeholder="0.00" value={1000} onChange={(values) => console.log('values: ', values)} />
+      <FormatCurrency currency="EUR" placeholder="0.00" className="new-class-name" value={1000} onChange={(values) => console.log('values: ', values)} />
       </div>
     );
   }
@@ -69,6 +69,7 @@ export default App;
 | ------------- |-------------| -----| -------- |
 | currency | Ex: USD, EUR, GBP, BRL etc... | required | International Organization for Standardization publishes a list of standard currency codes referred	to as the ISO 4217 code list. |
 | placeholder | Ex: 0.00, €150.00, US$150,00 etc ...| optional | The placeholder attribute specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format). |
+| className | string| optional | Base CSS class and prefix for the component. Generally one should only change className to provide new, CSS styles for a component. |
 | value | Ex. 1000 | optional | Value to the number format. It can be a float number, or formatted string. |
 | onChange | Ex: (values) => {} | none | onChange handler to get values object for usage in your component. |
 
@@ -76,7 +77,7 @@ export default App;
 values object is on following format
 ```js
 {
-  floatValue: 1000 // floating point representation. 
+  floatValue: 1000 // floating point representation.
   formattedValue: '€1.000,00', //value after applying formatting.
   value: '1000.00', //non formatted value as numeric string 1000.00.
 }

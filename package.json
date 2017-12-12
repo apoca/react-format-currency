@@ -1,6 +1,6 @@
 {
     "name": "react-format-currency",
-    "version": " v0.0.3-alpha.2",
+    "version": " v0.0.4",
     "description": "React component to format currency in an input or as a text field",
     "main": "./build/index.js",
     "repository": {
@@ -80,7 +80,6 @@
         "prop-types": "^15.6.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
-        "react-intl": "^2.4.0",
-        "webpack": "^3.8.1"
+        "react-intl": "^2.4.0"
     }
 }

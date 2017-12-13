@@ -96,17 +96,6 @@ class FormatCurrency extends Component {
       },
     );
 
-<<<<<<< HEAD
-=======
-    if (value) {
-      return (
-        <div>
-          <input value="" {...inputProps} />
-        </div>
-      );
-    }
-
->>>>>>> apoca/master
     return (
       <div>
         <input {...inputProps} />

@@ -43,7 +43,7 @@
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.0",
-        "babel-eslint": "^8.0.2",
+        "babel-eslint": "^8.0.3",
         "babel-jest": "^21.2.0",
         "babel-loader": "^7.1.2",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -54,7 +54,7 @@
         "babel-preset-stage-0": "^6.24.1",
         "enzyme": "^3.2.0",
         "enzyme-adapter-react-16": "^1.1.0",
-        "eslint": "^4.11.0",
+        "eslint": "^4.13.1",
         "eslint-config-airbnb": "^16.1.0",
         "eslint-loader": "^1.9.0",
         "eslint-plugin-import": "^2.8.0",
@@ -64,12 +64,11 @@
         "expect": "^21.2.1",
         "expect-jsx": "^5.0.0",
         "jest": "^21.2.1",
-        "karma-webpack": "^2.0.6",
-        "prettier-eslint": "^8.2.2",
+        "prettier-eslint": "^8.3.1",
         "react-test-renderer": "^16.2.0",
-        "webpack": "^3.8.1",
+        "webpack": "^3.10.0",
         "webpack-dashboard": "^1.0.2",
-        "webpack-dev-server": "^2.9.4"
+        "webpack-dev-server": "^2.9.7"
     },
     "peerDependencies": {
         "react": "^15.0.0-rc || ^15.0.0 || ^16.0.0-rc || ^16.2.0",

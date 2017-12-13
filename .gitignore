@@ -5,6 +5,7 @@
 **/bower_components
 **/complexity
 **/coverage
+**/build
 **/design.doc.json
 **/dist
 **/build

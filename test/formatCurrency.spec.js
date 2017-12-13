@@ -1,22 +1,18 @@
+import raf from './utils/tmpPolyfills';
 import React from 'react';
-import TestUtils from 'react-dom/test-utils';
 import expect from 'expect';
+import {mountWithIntl, shallowWithIntl} from './utils/intl-enzyme-test-helper';
 import FormatCurrency from '../src/index';
-import {IntlProvider, addLocaleData} from 'react-intl';
-import pt from 'react-intl/locale-data/pt';
-import en from 'react-intl/locale-data/en';
+import {configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-addLocaleData([
-  ...pt,
-  ...en
-]);
+configure({adapter: new Adapter()});
 
+describe('<FormatCurrency />', function () {
+  it('component renders', () => {
+    let wrapper = shallowWithIntl(<FormatCurrency currency="EUR" value={1000}/>);
+    let child = wrapper.find('FormatCurrency');
 
-describe('FormatCurrency', function () {
-  it('renders without problems', function () {
-    var FormatCurrency = TestUtils.renderIntoDocument(
-      <IntlProvider locale="pt"><FormatCurrency currency="EUR"/></IntlProvider>
-    );
-    expect(FormatCurrency).toExist();
+    expect(child.length).toEqual(1);
   });
 });

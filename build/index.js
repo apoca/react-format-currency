@@ -7,7 +7,7 @@
 		exports["react-format-currency"] = factory(require("react"));
 	else
 		root["react-format-currency"] = factory(root["React"]);
-})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -719,6 +719,7 @@ FormatCurrency.propTypes = {
   value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
   currency: _propTypes2.default.string.isRequired,
   placeholder: _propTypes2.default.string,
+  className: _propTypes2.default.string,
   onChange: _propTypes2.default.func,
   intl: _reactIntl.intlShape
 };

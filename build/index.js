@@ -565,6 +565,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(4);
@@ -685,7 +687,8 @@ var FormatCurrency = function (_Component) {
           formattedValue = _state2.formattedValue;
       var _props = this.props,
           placeholder = _props.placeholder,
-          className = _props.className;
+          className = _props.className,
+          disabled = _props.disabled;
 
 
       var inputProps = Object.assign({}, {
@@ -694,6 +697,7 @@ var FormatCurrency = function (_Component) {
         onFocus: this.onFocus,
         onBlur: this.onBlur,
         onKeyDown: this.onKeyDown,
+        disabled: disabled,
         className: className
       });
 
@@ -701,13 +705,14 @@ var FormatCurrency = function (_Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement('input', inputProps)
+          _react2.default.createElement('input', _extends({ value: '' }, inputProps))
         );
       }
+
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('input', { value: '', placeholder: placeholder, className: className, onChange: this.onChange })
+        _react2.default.createElement('input', { value: '', placeholder: placeholder, className: className, disabled: disabled, onChange: this.onChange })
       );
     }
   }]);
@@ -719,6 +724,7 @@ FormatCurrency.propTypes = {
   value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
   currency: _propTypes2.default.string.isRequired,
   placeholder: _propTypes2.default.string,
+  disabled: _propTypes2.default.bool,
   className: _propTypes2.default.string,
   onChange: _propTypes2.default.func,
   intl: _reactIntl.intlShape

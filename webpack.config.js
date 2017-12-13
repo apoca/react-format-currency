@@ -21,11 +21,9 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /(node_modules|bower_components|build)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env'],
-          },
+        loader: 'babel-loader',
+        options: {
+          presets: ['react', 'es2015', 'stage-0'],
         },
       },
     ],

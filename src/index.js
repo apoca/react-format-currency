@@ -81,6 +81,7 @@ class FormatCurrency extends Component {
     const { value, formattedValue } = this.state;
     const { placeholder, className, disabled } = this.props;
 
+
     const inputProps = Object.assign(
       {},
       {
@@ -95,6 +96,17 @@ class FormatCurrency extends Component {
       },
     );
 
+<<<<<<< HEAD
+=======
+    if (value) {
+      return (
+        <div>
+          <input value="" {...inputProps} />
+        </div>
+      );
+    }
+
+>>>>>>> apoca/master
     return (
       <div>
         <input {...inputProps} />

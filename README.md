@@ -1,6 +1,6 @@
-React Intl
-==========
-[React](http://facebook.github.io/react/) component to format currency in an input. With a little initialization, you get instantly internationalized values in your application.
+# React Format Currency
+
+[React](http://facebook.github.io/react/) Format Currency component to format currency in an input. With a little initialization, you get instantly internationalized values in your application.
 
 [![npm version](http://img.shields.io/npm/v/react-format-currency.svg)](https://npmjs.org/package/react-format-currency)
 [![Build Status](https://travis-ci.org/apoca/react-format-currency.svg?branch=master)](https://travis-ci.org/apoca/react-format-currency)
@@ -45,6 +45,7 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+
 3. To use the component:
  ```js
 import React, { Component } from 'react';
@@ -62,9 +63,10 @@ class App extends Component {
 }
 
 export default App;
-
 ```
+
 ### Props
+
 | Props        | Options           | Default  | Description |
 | ------------- |-------------| -----| -------- |
 | currency | Ex: USD, EUR, GBP, BRL etc... | required | International Organization for Standardization publishes a list of standard currency codes referred	to as the ISO 4217 code list. |
@@ -75,6 +77,7 @@ export default App;
 | onChange | Ex: (values) => {} | none | onChange handler to get values object for usage in your component. |
 
 #### values object
+
 values object is on following format
 ```js
 {
@@ -84,7 +87,6 @@ values object is on following format
 }
 ```
 
-Contribute
----------
+### Contribute
 
 Let's make React Format Currency better! If you're interested in helping, all contributions are welcome and appreciated.

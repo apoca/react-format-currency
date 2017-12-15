@@ -5,7 +5,7 @@ node_js:
   - "8"
 script:
   - npm run test:lint
-  - npm run test
+  - npm run test -- -u
 cache:
   directories:
   - $HOME/.npm

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormatCurrency /> component renders correctly 1`] = `
+<div>
+  <input
+    className={undefined}
+    disabled={undefined}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    placeholder={undefined}
+    value="€ 1,000.00"
+  />
+</div>
+`;

@@ -73,14 +73,13 @@ class FormatCurrency extends Component {
         floatValue: parseFloat(this.state.value),
       };
 
-      this.props.onChange(valueObj);
+      if (this.props.onChange) this.props.onChange(valueObj);
     });
   }
 
   render() {
     const { value, formattedValue } = this.state;
     const { placeholder, className, disabled } = this.props;
-
 
     const inputProps = Object.assign(
       {},
@@ -98,7 +97,7 @@ class FormatCurrency extends Component {
 
     return (
       <div>
-        <input {...inputProps} />
+        <input className="format" {...inputProps} />
       </div>
     );
   }

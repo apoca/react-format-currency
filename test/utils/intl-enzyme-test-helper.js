@@ -1,6 +1,9 @@
 import React from 'react';
-import { IntlProvider, intlShape } from 'react-intl';
+import { IntlProvider, intlShape, addLocaleData } from 'react-intl';
 import { mount, shallow } from 'enzyme';
+import pt from 'react-intl/locale-data/pt';
+
+addLocaleData([...pt]);
 
 // Create the IntlProvider to retrieve context for wrapping around.
 const intlProvider = new IntlProvider({ locale: 'pt' }, {});

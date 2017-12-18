@@ -27,11 +27,11 @@ describe('<FormatCurrency />', function () {
 
   test('should handle the blur event and return formatted value', () => {
     const onBlur = sinon.spy();
-    const wrapper = mountWithIntl(<FormatCurrency key={1} currency="EUR" value={1000} onBlur={onBlur} />);
+    const wrapper = mountWithIntl(<FormatCurrency currency="EUR" value={1000} onBlur={onBlur} />);
     const child = shallowWithIntl(wrapper.get(0));
     const input = wrapper.find('input').simulate('blur');
-    const value = child.dive().state().formattedValue.trim().replace(/\s/g,' ');
+    const value = child.dive().state().formattedValue.trim().replace(/\s/g,'');
 
-    expect(value).toBe('€ 1,000.00');
+    expect(value.trim()).toBe('€1,000.00');
   });
 });

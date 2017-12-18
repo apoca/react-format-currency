@@ -1,6 +1,6 @@
 {
     "name": "react-format-currency",
-    "version": " v0.0.8",
+    "version": " v0.0.9",
     "description": "React component to format currency in an input or as a text field",
     "main": "./build/index.js",
     "repository": {

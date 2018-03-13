@@ -616,7 +616,8 @@ var FormatCurrency = function (_Component) {
     value: function componentWillReceiveProps(nextProps) {
       this.setState({
         value: nextProps.value,
-        currency: nextProps.currency
+        currency: nextProps.currency,
+        formattedValue: nextProps.value
       });
     }
   }, {

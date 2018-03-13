@@ -25,6 +25,7 @@ class FormatCurrency extends Component {
     this.setState({
       value: nextProps.value,
       currency: nextProps.currency,
+      formattedValue: nextProps.value,
     });
   }
 

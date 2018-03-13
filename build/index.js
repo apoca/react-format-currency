@@ -7,7 +7,7 @@
 		exports["react-format-currency"] = factory(require("react"));
 	else
 		root["react-format-currency"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -565,8 +565,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(4);
@@ -614,6 +612,14 @@ var FormatCurrency = function (_Component) {
   }
 
   _createClass(FormatCurrency, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      this.setState({
+        value: nextProps.value,
+        currency: nextProps.currency
+      });
+    }
+  }, {
     key: 'onChange',
     value: function onChange(e) {
       e.persist();
@@ -667,7 +673,7 @@ var FormatCurrency = function (_Component) {
       });
 
       this.setState({
-        value: Number(value).toFixed(2),
+        value: value ? Number(value).toFixed(2) : '',
         formattedValue: el.value
       }, function () {
         var valueObj = {
@@ -692,27 +698,20 @@ var FormatCurrency = function (_Component) {
 
 
       var inputProps = Object.assign({}, {
-        value: formattedValue,
+        value: value ? formattedValue : '',
         onChange: this.onChange,
         onFocus: this.onFocus,
         onBlur: this.onBlur,
         onKeyDown: this.onKeyDown,
+        placeholder: placeholder,
         disabled: disabled,
         className: className
       });
 
-      if (value) {
-        return _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement('input', _extends({ value: '' }, inputProps))
-        );
-      }
-
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('input', { value: '', placeholder: placeholder, className: className, disabled: disabled, onChange: this.onChange })
+        _react2.default.createElement('input', inputProps)
       );
     }
   }]);
@@ -5717,12 +5716,10 @@ exports["default"] = {"locale":"en","pluralRuleFunction":function (n,ord){var s=
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-2015, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 

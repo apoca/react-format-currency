@@ -21,7 +21,7 @@ class FormatCurrency extends Component {
     this.onKeyDown = this.onKeyDown.bind(this);
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     this.setState({
       value: nextProps.value,
       currency: nextProps.currency,

@@ -10,7 +10,7 @@ exports[`<FormatCurrency /> component renders correctly 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     placeholder={undefined}
-    value="€ 1,000.00"
+    value="€1,000.00"
   />
 </div>
 `;
